@@ -7,34 +7,36 @@
     <body>
         <details>
             <summary>Grammar Use</summary>
-            <details>
-                <summary>Weapon Name</summary>
-                <div>
-                    <input type="checkbox" id="gu-wp-modifier" checked>
-                    <label for="gu-wp-modifier">Modifier</label><br>
-                    <input type="checkbox" id="gu-wp-material" checked>
-                    <label for="gu-wp-modifier">Material</label><br>
-                    <input type="checkbox" id="gu-wp-type" checked disabled>
-                    <label for="gu-wp-type">Type</label><br>
-                    <input type="checkbox" id="gu-wp-blessing" checked>
-                    <label for="gu-wp-blessing">Blessing</label><br>
-                    <button onclick="gugenerate('weapon');">Generate!</button><br>
-                    <span class="output" id="gu-wp-output"></span>
-                </div>
-            </details><br>
-             <details>
-                <summary>Item Name</summary>
-                <div>
-                    <input type="checkbox" id="gu-it-size" checked>
-                    <label for="gu-it-modifier">Modifier</label><br>
-                    <input type="checkbox" id="gu-it-modifier" checked>
-                    <label for="gu-it-modifier">Material</label><br>
-                    <input type="checkbox" id="gu-it-type" checked disabled>
-                    <label for="gu-it-type">Type</label><br>
-                    <button onclick="gugenerate('item');">Generate!</button><br>
-                    <span class="output" id="gu-it-output"></span>
-                </div>
-            </details>
+            <div class="container">
+                <details>
+                    <summary>Weapon Name</summary>
+                    <div class="container">
+                        <input type="checkbox" id="gu-wp-modifier" checked>
+                        <label for="gu-wp-modifier">Modifier</label><br>
+                        <input type="checkbox" id="gu-wp-material" checked>
+                        <label for="gu-wp-modifier">Material</label><br>
+                        <input type="checkbox" id="gu-wp-type" checked disabled>
+                        <label for="gu-wp-type">Type</label><br>
+                        <input type="checkbox" id="gu-wp-blessing" checked>
+                        <label for="gu-wp-blessing">Blessing</label><br>
+                        <button onclick="gugenerate('weapon');">Generate!</button><br>
+                        <span class="output" id="gu-wp-output"></span>
+                    </div>
+                </details><br>
+                <details>
+                    <summary>Item Name</summary>
+                    <div class="container">
+                        <input type="checkbox" id="gu-it-size" checked>
+                        <label for="gu-it-modifier">Modifier</label><br>
+                        <input type="checkbox" id="gu-it-modifier" checked>
+                        <label for="gu-it-modifier">Material</label><br>
+                        <input type="checkbox" id="gu-it-type" checked disabled>
+                        <label for="gu-it-type">Type</label><br>
+                        <button onclick="gugenerate('item');">Generate!</button><br>
+                        <span class="output" id="gu-it-output"></span>
+                    </div>
+                </details>
+            </div>
         </details>
         <script src="data/script.js"></script>
     </body>
