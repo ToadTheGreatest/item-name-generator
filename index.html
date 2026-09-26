@@ -1,42 +1,41 @@
-const lists = {
-    "metals": ["iron", "copper", "brass", "gold", "aluminum", "titanium", "tungsten", "steel",],
-    "weapon": {
-        "modifier": ["rusty", "great", "polished", "upgraded", "weathered", "decayed"],
-        "material": ["iron", "copper", "brass", "gold", "aluminum", "titanium", "tungsten", "steel", "wooden"],
-        "type": ["sword", "dagger", "claymore", "spear", "bow", "club", "bat"],
-        "blessing": ["+1", "+2", "+3", "+4", "+5", "of the hero", "of life", "of the great", "of the lord"],
-    }
-}
-function choice(list) {
-    return list[Math.floor(Math.random() * list.length)];
-}
-function generateWeapon() {
-    // oui oui~~
-    // hehe boii
-    const checkboxes = {
-        "modifier": document.getElementById("wp-modifier").checked,
-        "material": document.getElementById("wp-material").checked,
-        "type": document.getElementById("wp-type").checked,
-        "blessing": document.getElementById("wp-blessing").checked,
-    };
-    var name = [];
-    if (checkboxes.modifier) {
-        name.push(choice(lists.weapon.modifier));
-    }
-    if (checkboxes.material) {
-        name.push(choice(lists.weapon.material));
-    }
-    if (checkboxes.type) {
-        name.push(choice(lists.weapon.type));
-    }
-    if (checkboxes.blessing) {
-        name.push(choice(lists.weapon.blessing));
-    }
-    var output = name.join(" ");
-    document.getElementById("wp-output").textContent = output;
-}
-function generate(type) {
-    if (type == "weapon") {
-        generateWeapon()
-    }
-}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Item Name Generator</title>
+        <link rel="stylesheet" href="data/styles.css">
+    </head>
+    <body>
+        <details>
+            <summary>Grammar Use</summary>
+            <details>
+                <summary>Weapon Name</summary>
+                <div>
+                    <input type="checkbox" id="gu-wp-modifier" checked>
+                    <label for="gu-wp-modifier">Modifier</label><br>
+                    <input type="checkbox" id="gu-wp-material" checked>
+                    <label for="gu-wp-modifier">Material</label><br>
+                    <input type="checkbox" id="gu-wp-type" checked disabled>
+                    <label for="gu-wp-type">Type</label><br>
+                    <input type="checkbox" id="gu-wp-blessing" checked>
+                    <label for="gu-wp-blessing">Blessing</label><br>
+                    <button onclick="generate('weapon');">Generate!</button><br>
+                    <span class="output" id="gu-wp-output"></span>
+                </div>
+            </details><br>
+             <details>
+                <summary>Item Name</summary>
+                <div>
+                    <input type="checkbox" id="gu-it-size" checked>
+                    <label for="gu-it-modifier">Modifier</label><br>
+                    <input type="checkbox" id="gu-it-modifier" checked>
+                    <label for="gu-it-modifier">Material</label><br>
+                    <input type="checkbox" id="gu-it-type" checked disabled>
+                    <label for="gu-it-type">Type</label><br>
+                    <button onclick="gugenerate('item');">Generate!</button><br>
+                    <span class="output" id="gu-it-output"></span>
+                </div>
+            </details>
+        </details>
+        <script src="data/script.js"></script>
+    </body>
+</html>
