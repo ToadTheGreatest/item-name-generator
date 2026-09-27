@@ -81,7 +81,8 @@ function tracery() {
         console.log("No origin!")
         return;
     }
-    const result = traceryRunner(injson, "#origin#");
+    print("injson")
+    const result = traceryRunner(injson, "origin");
     output.textContent = result;
 }
 function traceryRunner(grammar, text) {
