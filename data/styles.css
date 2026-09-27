@@ -4,3 +4,12 @@
     border-width: 1px;
     border-color: black;
 }
+.input, .textarea {
+    border: solid;
+    border-radius: 0px;
+    border-width: 1px;
+    border-color: black;
+}
+.textarea {
+    resize: none;
+}
