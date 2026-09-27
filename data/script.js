@@ -69,3 +69,35 @@ function gugenerate(type) {
         gugenerateItem()
     }
 }
+function tracery() {
+    const input = document.getElementById("t-inputjson");
+    const output = document.getElementById("t-output");
+    if (!input.value) {
+        return;
+    }
+    const injson = JSON.parse(input.value);
+    if (!injson.origin) {
+        return;
+    }
+    const result = traceryRunner("origin");
+    output.textContent = result;
+}
+function traceryRunner(grammar, text) {
+    const modifiers = {
+        capitalize: s => s.charAt(0).toUpperCase + s.slice(1),
+        s: s => s.endsWith('s') ? s : s + "s",
+        a: s => ['a', 'e', 'i', 'o', 'u'].includes(s[0].toLowerCase()) ? `an ${s}` : `a ${s}`
+    };
+    if (grammar[text]) {
+        const randomPick = choice(grammar[text]);
+        return traceryRunner(grammar, randomPick);
+    }
+    return text.replace(/#([^#]+)#/g, (match, token) => {
+        const [symbol, ...mods] = token.split(".");
+        if (!grammer[symbol]) return match;
+        let result = traceryRunner(grammer, symbol);
+        mods.forEach(m => { if (modifiers[m]) result = modifiers[m](result); });
+        return result;
+    })
+}
+document.getElementById("t-inputjson").addEventListener("input", tracery())
