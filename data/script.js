@@ -81,13 +81,13 @@ function tracery() {
         console.log("No origin!")
         return;
     }
-    print("injson")
-    const result = traceryRunner(injson, "origin");
+    console.log("injson")
+    const result = traceryRunner(injson, "#origin#");
     output.textContent = result;
 }
 function traceryRunner(grammar, text) {
     const modifiers = {
-        capitalize: s => s.charAt(0).toUpperCase + s.slice(1),
+        capitalize: s => s.charAt(0).toUpperCase() + s.slice(1),
         s: s => s.endsWith('s') ? s : s + "s",
         a: s => ['a', 'e', 'i', 'o', 'u'].includes(s[0].toLowerCase()) ? `an ${s}` : `a ${s}`
     };
