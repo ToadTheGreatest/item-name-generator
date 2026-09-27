@@ -73,13 +73,15 @@ function tracery() {
     const input = document.getElementById("t-inputjson");
     const output = document.getElementById("t-output");
     if (!input.value) {
+        console.log("No input!")
         return;
     }
     const injson = JSON.parse(input.value);
     if (!injson.origin) {
+        console.log("No origin!")
         return;
     }
-    const result = traceryRunner("origin");
+    const result = traceryRunner("#origin#");
     output.textContent = result;
 }
 function traceryRunner(grammar, text) {

@@ -4,12 +4,14 @@
     border-width: 1px;
     border-color: black;
 }
-.input, .textarea {
+.input {
     border: solid;
     border-radius: 0px;
     border-width: 1px;
     border-color: black;
 }
-.textarea {
+textarea {
     resize: none;
+    width: 1000;
+    height: 800;
 }
