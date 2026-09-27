@@ -81,7 +81,7 @@ function tracery() {
         console.log("No origin!")
         return;
     }
-    const result = traceryRunner("#origin#");
+    const result = traceryRunner(injson, "#origin#");
     output.textContent = result;
 }
 function traceryRunner(grammar, text) {
@@ -96,10 +96,10 @@ function traceryRunner(grammar, text) {
     }
     return text.replace(/#([^#]+)#/g, (match, token) => {
         const [symbol, ...mods] = token.split(".");
-        if (!grammer[symbol]) return match;
-        let result = traceryRunner(grammer, symbol);
+        if (!grammar[symbol]) return match;
+        let result = traceryRunner(grammar, symbol);
         mods.forEach(m => { if (modifiers[m]) result = modifiers[m](result); });
         return result;
     })
 }
-document.getElementById("t-inputjson").addEventListener("input", tracery())
+document.getElementById("t-inputjson").addEventListener("input", tracery)
