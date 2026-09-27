@@ -11,13 +11,13 @@
                 <details>
                     <summary>Weapon Name</summary>
                     <div class="container">
-                        <input type="checkbox" id="gu-wp-modifier" checked>
+                        <input class="input" type="checkbox" id="gu-wp-modifier" checked>
                         <label for="gu-wp-modifier">Modifier</label><br>
-                        <input type="checkbox" id="gu-wp-material" checked>
+                        <input class="input" type="checkbox" id="gu-wp-material" checked>
                         <label for="gu-wp-modifier">Material</label><br>
-                        <input type="checkbox" id="gu-wp-type" checked disabled>
+                        <input class="input" type="checkbox" id="gu-wp-type" checked disabled>
                         <label for="gu-wp-type">Type</label><br>
-                        <input type="checkbox" id="gu-wp-blessing" checked>
+                        <input class="input" type="checkbox" id="gu-wp-blessing" checked>
                         <label for="gu-wp-blessing">Blessing</label><br>
                         <button onclick="gugenerate('weapon');">Generate!</button><br>
                         <span class="output" id="gu-wp-output"></span>
@@ -26,11 +26,11 @@
                 <details>
                     <summary>Item Name</summary>
                     <div class="container">
-                        <input type="checkbox" id="gu-it-size" checked>
+                        <input class="input" type="checkbox" id="gu-it-size" checked>
                         <label for="gu-it-modifier">Modifier</label><br>
-                        <input type="checkbox" id="gu-it-modifier" checked>
+                        <input class="input" type="checkbox" id="gu-it-modifier" checked>
                         <label for="gu-it-modifier">Material</label><br>
-                        <input type="checkbox" id="gu-it-type" checked disabled>
+                        <input class="input" type="checkbox" id="gu-it-type" checked disabled>
                         <label for="gu-it-type">Type</label><br>
                         <button onclick="gugenerate('item');">Generate!</button><br>
                         <span class="output" id="gu-it-output"></span>
@@ -41,7 +41,24 @@
         <details>
             <summary>Tracery</summary>
             <div>
-                <textarea id="inputjson" class="textarea"></textarea><br>
+                <textarea id="t-inputjson" class="textarea"></textarea><br>
+                <textarea id="output" disabled id="t-output"></textarea><br>
+                <details>
+                    <summary>Examples</summary>
+                    <div>
+                        <textarea disabled>
+{
+    "origin":[ "#greeting1# #greeting2#,<br/>My #adjective# #noun# #adverb# #verb# your #adjective# #noun#. My #noun# #verb# your #noun#. You are my #adjective# #noun#, my #adjective# #noun#, my #adjective# #adjective# #noun#.<br/>Yours #adverb#,<br/>M.U.C." ],
+    "greeting1" : ["Beloved","Darling","Dear","Dearest","Fanciful","Honey"],
+    "greeting2" : ["Chickpea","Dear","Duck","Jewel","Love","Moppet","Sweetheart"],
+    "adjective" : ["affectionate","amorous","anxious","avid","beautiful","breathless","burning","covetous","craving","curious","eager","fervent","fondest","loveable","lovesick","loving","passionate","precious","seductive","sweet","sympathetic","tender","unsatisfied","winning","wistful"],
+    "noun" : ["adoration","affection","ambition","appetite","ardour","being","burning","charm","craving","desire","devotion","eagerness","enchantment","enthusiasm","fancy","fellow feeling","fervour","fondness","heart","hunger","infatuation","little liking","longing","love","lust","passion","rapture","sympathy","thirst","wish","yearning"],
+    "adverb" : ["affectionately","ardently","anxiously","beautifully","burningly","covetously","curiously","eagerly","fervently","fondly","impatiently","keenly","lovingly","passionately","seductively","tenderly","wistfully"],
+    "verb" : ["adores","attracts","clings to","holds dear","hopes for","hungers for","likes","longs for","loves","lusts after","pants for","pines for","sighs for","tempts","thirsts for","treasures","yearns for","woos"]
+}
+                        </textarea>
+                    </div>
+                </details>    
             </div>
         </details>
         <script src="data/script.js"></script>
